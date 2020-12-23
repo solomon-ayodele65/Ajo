@@ -1,142 +1,116 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   CWidgetDropdown,
   CRow,
   CCol,
-  CDropdown,
-  CDropdownMenu,
-  CDropdownItem,
-  CDropdownToggle
-} from '@coreui/react'
-import CIcon from '@coreui/icons-react'
-import ChartLineSimple from '../charts/ChartLineSimple'
-import ChartBarSimple from '../charts/ChartBarSimple'
+  CBadge
+} from '@coreui/react';
+import CIcon from '@coreui/icons-react';
 
 const WidgetsDropdown = () => {
   // render
   return (
     <CRow>
+    
       <CCol sm="6" lg="3">
-        <CWidgetDropdown
+      <Link to='/usersPage' className="text-decoration-none">
+        <CWidgetDropdown style={{height:150}}
           color="gradient-primary"
-          header="9.823"
-          text="Members online"
+          header="Users"
+          text="active users (20)"
           footerSlot={
-            <ChartLineSimple
-              pointed
-              className="c-chart-wrapper mt-3 mx-3"
-              style={{height: '70px'}}
-              dataPoints={[65, 59, 84, 84, 51, 55, 40]}
-              pointHoverBackgroundColor="primary"
-              label="Members"
-              labels="months"
-            />
-          }
+            <div>
+               <CIcon name="cil-user" style={{width:50,height:50,marginLeft:80,}} />
+               <CBadge color="primary" className="">567</CBadge>
+             </div>
+            }
         >
-          <CDropdown>
+          {/* <CDropdown>
             <CDropdownToggle color="transparent">
               <CIcon name="cil-settings"/>
             </CDropdownToggle>
             <CDropdownMenu className="pt-0" placement="bottom-end">
-              <CDropdownItem>Action</CDropdownItem>
-              <CDropdownItem>Another action</CDropdownItem>
-              <CDropdownItem>Something else here...</CDropdownItem>
-              <CDropdownItem disabled>Disabled action</CDropdownItem>
+              <CDropdownItem><Link to='/usersPage'>View users</Link></CDropdownItem>
             </CDropdownMenu>
-          </CDropdown>
+          </CDropdown> */}
         </CWidgetDropdown>
+        </Link>
       </CCol>
+     
 
+      
       <CCol sm="6" lg="3">
-        <CWidgetDropdown
+      <Link to='/groupsPage' className="text-decoration-none">
+        <CWidgetDropdown style={{height:150}}
           color="gradient-info"
-          header="9.823"
-          text="Members online"
+          header="Groups"
+          text="active groups (10)"
           footerSlot={
-            <ChartLineSimple
-              pointed
-              className="mt-3 mx-3"
-              style={{height: '70px'}}
-              dataPoints={[1, 18, 9, 17, 34, 22, 11]}
-              pointHoverBackgroundColor="info"
-              options={{ elements: { line: { tension: 0.00001 }}}}
-              label="Members"
-              labels="months"
-            />
-          }
+            <div>
+               <CIcon name="cil-people" style={{width:50,height:50,marginLeft:80,}} />
+               <CBadge color="info" className="">312</CBadge>
+             </div>
+            }
         >
-          <CDropdown>
-            <CDropdownToggle caret={false} color="transparent">
-              <CIcon name="cil-location-pin"/>
-            </CDropdownToggle>
-            <CDropdownMenu className="pt-0" placement="bottom-end">
-              <CDropdownItem>Action</CDropdownItem>
-              <CDropdownItem>Another action</CDropdownItem>
-              <CDropdownItem>Something else here...</CDropdownItem>
-              <CDropdownItem disabled>Disabled action</CDropdownItem>
-            </CDropdownMenu>
-          </CDropdown>
-        </CWidgetDropdown>
-      </CCol>
-
-      <CCol sm="6" lg="3">
-        <CWidgetDropdown
-          color="gradient-warning"
-          header="9.823"
-          text="Members online"
-          footerSlot={
-            <ChartLineSimple
-              className="mt-3"
-              style={{height: '70px'}}
-              backgroundColor="rgba(255,255,255,.2)"
-              dataPoints={[78, 81, 80, 45, 34, 12, 40]}
-              options={{ elements: { line: { borderWidth: 2.5 }}}}
-              pointHoverBackgroundColor="warning"
-              label="Members"
-              labels="months"
-            />
-          }
-        >
-          <CDropdown>
+           {/* <CDropdown>
             <CDropdownToggle color="transparent">
               <CIcon name="cil-settings"/>
             </CDropdownToggle>
             <CDropdownMenu className="pt-0" placement="bottom-end">
-              <CDropdownItem>Action</CDropdownItem>
-              <CDropdownItem>Another action</CDropdownItem>
-              <CDropdownItem>Something else here...</CDropdownItem>
-              <CDropdownItem disabled>Disabled action</CDropdownItem>
+              <CDropdownItem><Link to='/groupsPage'>View groups</Link></CDropdownItem>
+              <CDropdownItem><Link to='/groupAdmins'>View admins</Link></CDropdownItem>
             </CDropdownMenu>
-          </CDropdown>
+          </CDropdown> */}
+        </CWidgetDropdown>
+        </Link>
+      </CCol>
+     
+
+      <CCol sm="6" lg="3">
+        <CWidgetDropdown style={{height:150}}
+          color="gradient-success"
+          header="Completed ajo"
+          text="no of ajo ajo (3)"
+          footerSlot={
+            <div>
+               <CIcon name="cil-pencil" style={{width:50,height:50,marginLeft:80,}} />
+               <CBadge color="success" className="">58</CBadge>
+             </div>
+            }
+        >
+          {/* <CDropdown>
+            <CDropdownToggle color="transparent">
+              <CIcon name="cil-settings"/>
+            </CDropdownToggle>
+            <CDropdownMenu className="pt-0" placement="bottom-end">
+              <CDropdownItem>View ajo details</CDropdownItem>
+              <CDropdownItem>View ajo transactions</CDropdownItem>
+            </CDropdownMenu>
+          </CDropdown> */}
         </CWidgetDropdown>
       </CCol>
 
       <CCol sm="6" lg="3">
-        <CWidgetDropdown
-          color="gradient-danger"
-          header="9.823"
-          text="Members online"
+        <CWidgetDropdown style={{height:150}}
+          color="gradient-warning"
+          header="Pending Ajos"
+          text="no of active ajo (7)"
           footerSlot={
-            <ChartBarSimple
-              className="mt-3 mx-3"
-              style={{height: '70px'}}
-              backgroundColor="rgb(250, 152, 152)"
-              label="Members"
-              labels="months"
-            />
-          }
+            <div>
+               <CIcon name="cil-calendar" style={{width:50,height:50,marginLeft:80,}} />
+               <CBadge color="warning" className="">132</CBadge>
+             </div>
+            }
         >
-          <CDropdown>
-            <CDropdownToggle caret className="text-white" color="transparent">
+            {/* <CDropdown>
+            <CDropdownToggle color="transparent">
               <CIcon name="cil-settings"/>
             </CDropdownToggle>
             <CDropdownMenu className="pt-0" placement="bottom-end">
-              <CDropdownItem>Action</CDropdownItem>
-              <CDropdownItem>Another action</CDropdownItem>
-              <CDropdownItem>Something else here...</CDropdownItem>
-              <CDropdownItem disabled>Disabled action</CDropdownItem>
+              <CDropdownItem>Pending Ajo groups</CDropdownItem>
             </CDropdownMenu>
-          </CDropdown>
+          </CDropdown> */}
         </CWidgetDropdown>
       </CCol>
     </CRow>

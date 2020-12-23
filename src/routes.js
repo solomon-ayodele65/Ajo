@@ -36,11 +36,18 @@ const Colors = React.lazy(() => import('./views/theme/colors/Colors'));
 const Typography = React.lazy(() => import('./views/theme/typography/Typography'));
 const Widgets = React.lazy(() => import('./views/widgets/Widgets'));
 const Users = React.lazy(() => import('./views/users/Users'));
+const UsersPage = React.lazy(() => import('./views/users/UsersPage'));
 const User = React.lazy(() => import('./views/users/User'));
+const GroupsPage = React.lazy(() => import('./views/groups/GroupsPage'));
+const GroupAdmins = React.lazy(() => import('./views/groups/GroupAdmins'));
+
 
 const routes = [
   { path: '/home', exact: true, name: 'Home' },
   { path: '/dashboard', name: 'Dashboard', component: Dashboard },
+  { path: '/groupsPage', name: 'GroupsPage', component: GroupsPage },
+  { path: '/groupAdmins', name: 'GroupAdmins', component: GroupAdmins },
+  { path: '/usersPage', name: 'UsersPage', component: UsersPage },
   { path: '/theme', name: 'Theme', component: Colors, exact: true },
   { path: '/theme/colors', name: 'Colors', component: Colors },
   { path: '/theme/typography', name: 'Typography', component: Typography },
